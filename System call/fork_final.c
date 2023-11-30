@@ -10,7 +10,8 @@
 int main()
 {
     int x = 3;
-    int pid = fork();
+    pid_t pid;
+    pid = fork();
     if (pid == 0)
     {
         printf("Hi from child process\n");

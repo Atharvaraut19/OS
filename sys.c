@@ -6,8 +6,6 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <string.h>
-#include <errno.h> // Include errno for error handling
-
 void processRelatedSystemCalls() {
     pid_t pid;
     int status;
