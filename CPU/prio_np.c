@@ -57,7 +57,7 @@ int main()
                 temp = proc[k];
                 proc[k] = proc[j];
                 proc[j] = temp;
-            }
+            }  
         }
         k++;
     } 

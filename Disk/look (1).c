@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void Sort(int *arr, int n)
+void Sort(int arr[], int n)
 {
     for (int i = 0; i < n - 1; i++)
     {

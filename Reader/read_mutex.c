@@ -72,11 +72,11 @@ int main() {
     pthread_mutex_init(&reader_sem, NULL);
     pthread_mutex_init(&writer_sem, NULL);
 
-    for (i = 0; i < NUM_READERS; i++) {
+    for (i = 0; i <= NUM_READERS; i++) {
         pthread_create(&reader_threads[i], NULL, reader,i+1);
     }
 
-    for (i = 0; i < NUM_WRITERS; i++) {
+    for (i = 0; i <= NUM_WRITERS; i++) {
         pthread_create(&writer_threads[i], NULL, writer,i+1);
     }
 
