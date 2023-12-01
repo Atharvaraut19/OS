@@ -1,0 +1,80 @@
+
+create() {
+  echo -n "Enter the file name: "
+  read filename
+  touch "$filename"
+  echo "File '$filename' created."
+}
+
+
+write() {
+  echo -n "Enter the file name: "
+  read filename
+  echo -n "Enter the text to write: "
+  read text
+  echo "$text" > "$filename"
+  echo "Text written to '$filename'."
+}
+
+
+read_line_by_line() {
+  echo -n "Enter the file name: "
+  read filename
+  echo "Reading contents line by line from '$filename':"
+  while IFS= read -r line; do
+    echo "$line"
+  done < "$filename"
+}
+
+
+read_char_by_char() {
+  echo -n "Enter the file name: "
+  read filename
+  echo "Reading contents character by character from '$filename':"
+  while IFS= read -n 1 char; do
+    echo "$char"
+  done < "$filename"
+}
+
+
+append() {
+  echo -n "Enter the file name: "
+  read filename
+  echo -n "Enter the text to append: "
+  read text
+  echo "$text" >> "$filename"
+  echo "Text appended to '$filename'."
+}
+
+
+delete() {
+  echo -n "Enter the file name: "
+  read filename
+  rm -i "$filename"
+  echo " deleted."
+}
+
+while true;
+do
+
+  echo "1. Create a new file"
+  echo  "2. Write to a file"
+  echo   "3. Read contents line by line"
+  echo "4. Read contents character by character"
+  echo   "5. Append to a file"
+  echo "6. Delete a file"
+  echo  "7.  Exit"
+  echo -n "Enter choice: "
+  read choice
+
+  case $choice in
+    1) create ;;
+    2) write;;
+    3) read_line_by_line ;;
+    4) read_char_by_char ;;
+    5) append;;
+    6) delete ;;
+    7) exit 0 ;;
+    *) echo "Invalid choice. Please try again." ;;
+  esac
+done
